@@ -1,14 +1,16 @@
 
-import { snakeOnFood, expandSnake } from './snake.js';
+import {
+  snakeOnFood,
+  expandSnake
+} from './snake.js';
 
 let foodPosition = {
-  x: 1, 
-  y: 15
+  x: 10, 
+  y: 10
 }
 const EXPANSION_RATE = 1
 
 export function update() { 
-
   if (snakeOnFood(foodPosition)) {
     expandSnake(EXPANSION_RATE)
     foodPosition = { x: 2, y: 10 };
