@@ -17,6 +17,9 @@ export function update() {
   } 
 }
 
+function randomlize() {
+  
+}
 
 
 export function draw(gameBoard) {
