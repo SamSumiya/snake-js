@@ -9,7 +9,7 @@ import {
 // Setup the game loop so that I can update the status 
 
 let lastRenderTime = 0
-
+const gameBoard = document.getElementById('game-board')
 
 function main(currentTime) {
   window.requestAnimationFrame(main);
@@ -26,7 +26,7 @@ function update () {
 }
 
 function draw() {
-  drawSnake()
+  drawSnake(gameBoard);
 }
 
 window.requestAnimationFrame(main);
