@@ -1,11 +1,20 @@
 
+import { snakeOnFood, expandSnake } from './snake.js';
 
-const foodPosition = {
+let foodPosition = {
   x: 1, 
   y: 15
 }
+const EXPANSION_RATE = 1
 
-export function update() { }
+export function update() { 
+
+  if (snakeOnFood(foodPosition)) {
+    expandSnake(EXPANSION_RATE)
+    foodPosition = { x: 2, y: 10 };
+  } 
+}
+
 
 
 export function draw(gameBoard) {

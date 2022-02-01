@@ -20,7 +20,6 @@ function main(currentTime) {
 
   update(); 
   draw(); 
-  drawf();
 }
 
 function update () { 
@@ -33,8 +32,6 @@ function draw() {
   drawSnake(gameBoard);
   drawFood(gameBoard);
 }
-
-
 
 window.requestAnimationFrame(main);
 
