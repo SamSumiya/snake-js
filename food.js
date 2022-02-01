@@ -4,28 +4,33 @@ import {
   expandSnake
 } from './snake.js';
 
-let foodPosition = {
-  x: 10, 
-  y: 10
-}
+import {
+  randomGridPosition
+} from './grid.js'
+
+let foodPosition = setRandNewFoodPosition();
 const EXPANSION_RATE = 1
 
 export function update() { 
   if (snakeOnFood(foodPosition)) {
     expandSnake(EXPANSION_RATE)
-    foodPosition = { x: 2, y: 10 };
+    foodPosition = setRandNewFoodPosition()
   } 
 }
 
-function randomlize() {
-  
-}
-
-
 export function draw(gameBoard) {
   const foodElement = document.createElement('div')
-  foodElement.style.gridColumnStart = foodPosition.x
-  foodElement.style.gridRowStart = foodPosition.y
+  foodElement.style.gridRowStart = foodPosition.x
+  foodElement.style.gridColumnStart = foodPosition.y; 
   foodElement.classList.add('food')
   gameBoard.appendChild(foodElement)
 }
+
+function setRandNewFoodPosition() {
+  let newFoodPosition
+  while (newFoodPosition == null || snakeOnFood(newFoodPosition)) {
+    newFoodPosition = randomGridPosition(); 
+  }
+  return newFoodPosition
+}
+

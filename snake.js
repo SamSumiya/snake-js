@@ -43,13 +43,15 @@ function resetSegements() {
   return newSegments 
 }
 
-
 export function snakeOnFood(position) {
-  return snakeBody.some((segment) => equalPosition(segment, position));
+  return snakeBody.some((segment) => {
+    console.log(segment, position);
+    return equalPositions(segment, position) 
+  })
 }
 
-function equalPosition(pos1, pos2) {
-  return pos1.x === pos2.x && pos1.y === pos2.y ? true : false 
+function equalPositions(pos1, pos2) {
+  return pos1.x === pos2.y && pos1.y === pos2.x;
 }
 
 
