@@ -1,5 +1,9 @@
 
-import { SNAKE_SPEED } from './snake'
+import {
+  SNAKE_SPEED,
+  update as updateSnake,
+  draw as drawSnake
+} from './snake.js'
 
 
 // Setup the game loop so that I can update the status 
@@ -13,15 +17,18 @@ function main(currentTime) {
   if (secondsSinceLastRender < 1 / SNAKE_SPEED) return;
   lastRenderTime = currentTime; 
 
-  update() 
-  draw() 
+  update(); 
+  draw(); 
+}
+
+function update () { 
+  updateSnake()
+}
+
+function draw() {
+  drawSnake()
 }
 
 window.requestAnimationFrame(main);
 
 
-function update() {
-
-}
-
-function draw() {}
