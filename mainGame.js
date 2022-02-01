@@ -2,9 +2,12 @@
 import {
   SNAKE_SPEED,
   update as updateSnake,
-  draw as drawSnake
+  draw as drawSnake,  
 } from './snake.js'
 
+import {
+   drawf as drawFood,
+} from './food.js'
 
 // Setup the game loop so that I can update the status 
 
@@ -19,6 +22,7 @@ function main(currentTime) {
 
   update(); 
   draw(); 
+  drawf();
 }
 
 function update () { 
@@ -28,6 +32,10 @@ function update () {
 function draw() {
   gameBoard.innerHTML = ''
   drawSnake(gameBoard);
+}
+
+function drawf() {
+  drawFood(gameBoard);
 }
 
 window.requestAnimationFrame(main);
