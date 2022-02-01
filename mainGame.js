@@ -5,9 +5,7 @@ import {
   draw as drawSnake,  
 } from './snake.js'
 
-import {
-   drawf as drawFood,
-} from './food.js'
+import { draw as drawFood, update as updateFood } from './food.js';
 
 // Setup the game loop so that I can update the status 
 
@@ -27,16 +25,16 @@ function main(currentTime) {
 
 function update () { 
   updateSnake()
+  updateFood() 
 }
 
 function draw() {
   gameBoard.innerHTML = ''
   drawSnake(gameBoard);
-}
-
-function drawf() {
   drawFood(gameBoard);
 }
+
+
 
 window.requestAnimationFrame(main);
 

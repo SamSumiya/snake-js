@@ -1,14 +1,14 @@
 
 
 const foodPosition = {
-  x: 15, 
+  x: 1, 
   y: 15
 }
 
 export function update() { }
 
 
-export function drawf(gameBoard) {
+export function draw(gameBoard) {
   const foodElement = document.createElement('div')
   foodElement.style.gridColumnStart = foodPosition.x
   foodElement.style.gridRowStart = foodPosition.y
