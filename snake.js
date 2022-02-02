@@ -54,6 +54,10 @@ function equalPositions(pos1, pos2) {
   return pos1.x === pos2.y && pos1.y === pos2.x;
 }
 
+export function getSnakeHead() {
+  return snakeBody[0]
+}
+
 
 
 
