@@ -22,7 +22,10 @@ const gameBoard = document.getElementById('game-board')
 
 function main(currentTime) {
   if (gameOver) {
-    return alert('You lose')
+    if (confirm('You lost')) {
+      window.location = './'
+    }
+    return 
   }
   window.requestAnimationFrame(main);
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
